@@ -112,5 +112,9 @@ def random_entry(request):
     return redirect("wiki", entry)
 
 
+def edit(request):
+    pass
+
+
 def handler404(request, *args):
     return render(request, "404.html", {})

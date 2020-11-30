@@ -8,6 +8,7 @@ urlpatterns = [
     path("search/", views.search, name="search"),
     path("new", views.new, name="new"),
     path("random", views.random_entry, name="random_entry"),
+    path("edit", views.edit, name="edit"),
 ]
 
 handler404 = "encyclopedia.views.handler404"
