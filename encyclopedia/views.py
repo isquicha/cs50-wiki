@@ -113,7 +113,23 @@ def random_entry(request):
 
 
 def edit(request, entry):
-    pass
+    if request.method == "GET":
+        title = entry
+        content = util.get_entry(title)
+        form = NewEntryForm({"title": title, "content": content})
+        return render(
+            request,
+            "encyclopedia/edit.html",
+            {"form": form, "title": title},
+        )
+
+    form = NewEntryForm(request.POST)
+    if form.is_valid():
+        title = form.cleaned_data.get("title")
+        content = form.cleaned_data.get("content")
+
+        util.save_entry(title=title, content=content)
+        return redirect("wiki", title)
 
 
 def handler404(request, *args):
