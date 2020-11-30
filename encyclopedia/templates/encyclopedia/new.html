@@ -17,12 +17,6 @@ New | Encyclopedia
 <form action="{% url 'new' %}" method="POST">
     {% csrf_token %}
     <div class="form-group">
-        <!--
-        <input type="text" name="title" placeholder="Title">
-        <br><br>
-        <textarea class="form-control" name="content" placeholder="Content (markdown)" id="new_content"></textarea>
-        <br><br>
-    -->
         {{ form }}
         <button class="btn btn-primary" type="submit">Create new entry</button>
     </div>
