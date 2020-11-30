@@ -112,7 +112,7 @@ def random_entry(request):
     return redirect("wiki", entry)
 
 
-def edit(request):
+def edit(request, entry):
     pass
 
 
