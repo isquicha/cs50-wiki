@@ -1,3 +1,4 @@
+from random import randint
 from django.shortcuts import render, redirect
 from django.http import Http404
 from django.contrib import messages
@@ -103,6 +104,12 @@ def new(request):
         "encyclopedia/new.html",
         {"form": form},
     )
+
+
+def random_entry(request):
+    entries = util.list_entries()
+    entry = entries[randint(0, len(entries) - 1)]
+    return redirect("wiki", entry)
 
 
 def handler404(request, *args):

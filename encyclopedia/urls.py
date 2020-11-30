@@ -7,6 +7,7 @@ urlpatterns = [
     path("wiki/<str:entry>", views.wiki, name="wiki"),
     path("search/", views.search, name="search"),
     path("new", views.new, name="new"),
+    path("random", views.random_entry, name="random_entry"),
 ]
 
 handler404 = "encyclopedia.views.handler404"
